@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enigmas dos Departamentos – Administração Financeira</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Enigmas dos Departamentos • <span class="accent2">Administração Financeira</span></h1>
+    <div class="sub">Empurre os blocos (departamentos) para os <strong>slots numerados</strong> na <strong>ordem correta</strong>.
+      Ao posicionar cada bloco, responda o <strong>enigma</strong>. Errou? <strong>Volta ao início</strong>.
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="pill" id="moves">Movimentos: 0</div>
+    <div class="pill" id="timer">Tempo: 00:00</div>
+    <div class="pill" id="stage">Etapa: 1</div>
+    <button class="btn" id="btnReset">Reiniciar</button>
+    <button class="btn" id="btnHow">Como jogar</button>
+  </div>
+
+  <div class="wrap">
+    <div class="boardWrap">
+      <canvas id="game" width="700" height="700"></canvas>
+    </div>
+    <div class="legend">
+      <span><i class="sq" style="background:#1f2937"></i> Parede</span>
+      <span><i class="sq" style="background:#0f766e"></i> Jogador</span>
+      <span><i class="sq" style="background:#334155"></i> Espaço</span>
+      <span><i class="sq" style="background:#7c3aed"></i> Bloco (Departamento)</span>
+      <span><i class="sq" style="background:#0369a1"></i> Slot (1..8)</span>
+      <span><i class="sq" style="background:#16a34a"></i> Slot travado ✔</span>
+    </div>
+  </div>
+
+  <!-- Modal de enigma -->
+  <dialog id="dlg">
+    <form method="dialog" class="modal">
+      <h2>Enigma <span class="tag" id="dlgStage">#1</span></h2>
+      <p id="dlgText">Texto do enigma…</p>
+      <input id="dlgAnswer" placeholder="Sua resposta aqui" autocomplete="off" />
+      <div class="actions">
+        <button class="btn" value="cancel">Cancelar</button>
+        <button class="btn" id="dlgOk" value="ok">Responder</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
