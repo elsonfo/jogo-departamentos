@@ -9,8 +9,9 @@
 <body>
   <header>
     <h1>Enigmas dos Departamentos • <span class="accent2">Administração Financeira</span></h1>
-    <div class="sub">Empurre os blocos (departamentos) para os <strong>slots numerados</strong> na <strong>ordem correta</strong>.
-      Ao posicionar cada bloco, responda o <strong>enigma</strong>. Errou? <strong>Volta ao início</strong>.
+    <div class="sub">
+      Empurre os blocos (departamentos) até os <strong>slots numerados</strong> na <strong>ordem correta</strong>.
+      Ao posicionar cada bloco, responda ao <strong>enigma</strong>. Errou? <strong>Reinicia do zero</strong>.
     </div>
   </header>
 
@@ -26,6 +27,19 @@
     <div class="boardWrap">
       <canvas id="game" width="700" height="700"></canvas>
     </div>
+
+    <!-- Controles para celular (aparecem em telas ≤ 820px) -->
+    <div class="mobile-controls" aria-label="Controles de movimento">
+      <div class="row">
+        <button class="dpad up"    id="btnUp"    aria-label="Cima">▲</button>
+      </div>
+      <div class="row">
+        <button class="dpad left"  id="btnLeft"  aria-label="Esquerda">◀</button>
+        <button class="dpad down"  id="btnDown"  aria-label="Baixo">▼</button>
+        <button class="dpad right" id="btnRight" aria-label="Direita">▶</button>
+      </div>
+    </div>
+
     <div class="legend">
       <span><i class="sq" style="background:#1f2937"></i> Parede</span>
       <span><i class="sq" style="background:#0f766e"></i> Jogador</span>
@@ -36,7 +50,7 @@
     </div>
   </div>
 
-  <!-- Modal de enigma -->
+  <!-- Modal de Enigma -->
   <dialog id="dlg">
     <form method="dialog" class="modal">
       <h2>Enigma <span class="tag" id="dlgStage">#1</span></h2>
